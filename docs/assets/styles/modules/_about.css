@@ -1,0 +1,76 @@
+.about {
+	max-width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	color: $htDarkGrey;
+	padding-top: 100px;
+	/*padding-bottom: 60px;*/
+
+	&__link {
+		color: $htDarkGreen;
+	}
+
+	&__link:hover {
+		color: $htLightGreen;
+		text-decoration: none;
+	}
+
+	&__image {
+		margin-top: 60px;
+		width: 85%;
+		box-shadow: 4px 8px 10px 0px #000000d1;
+
+		@mixin atSmall {
+			width: 80%;
+		}
+
+		@mixin atMedium {
+			width: 78%;
+			box-shadow: 12px 11px 10px 0px #000000d1;
+		}
+
+		@mixin atMedium-Small {
+			width: 66.5%;
+		}
+
+		@mixin atMedium-Large {
+			width: 68%;
+		}
+
+		@mixin atLarge {
+			width: 75%;
+		}
+	}
+
+	&__text-content {
+		padding-top: 0px;
+		font-size: 1rem;
+		max-width: 350px;
+		margin: auto;
+		/*margin-bottom: -80px;*/
+		text-align: center;
+		line-height: 180%;
+		color: $htBlack;
+
+		@mixin atSmall {
+			font-size: 1.2rem;
+			max-width: 500px;
+			padding-top: 20px;
+		}
+
+		@mixin atMedium {
+			font-size: 1.5rem;
+			max-width: 600px;
+			padding-top: 40px;
+		}
+
+		@mixin atMedium-Small {
+			max-width: 800px;
+		}
+
+		@mixin atLarge {
+			max-width: 1000px;
+		}
+	}
+}

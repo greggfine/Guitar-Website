@@ -1,0 +1,29 @@
+.btn-submit {
+	text-decoration: none;
+	border: 1px solid #000;
+	color: $htDarkGreen;
+	padding: .37rem 1rem;
+	margin-right: 20px;
+	margin-left: 20px;
+	background-color: $htWhite;
+
+	@mixin atSmall {
+		padding: .75rem 2rem;
+	}
+}
+
+.btn-inst-list {
+	
+	padding: 1em 2em;
+	font-size: 1.1em;
+	border-radius: 7px;
+	color: $htDarkGrey;
+	background-color: $htLightGreen;
+}
+
+.btn-inst-list:hover {
+
+	background-color: $htDarkGrey;
+	color: $htLightGreen;
+}
+

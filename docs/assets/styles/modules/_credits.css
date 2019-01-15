@@ -1,0 +1,44 @@
+.credits {
+	background-image: url("./roberta-sorge-125543-unsplash.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	display: flex;
+	flex-direction: column;
+	padding-bottom: 180px;
+
+	@mixin atMedium {
+		flex-direction: row;
+	}
+
+	&__list {
+		width: 85%;
+		margin: auto;
+		padding: 40px;
+		background-color: $htLightGreen;
+		list-style-type: none;
+		border-radius: 3%;
+		line-height: 2.2;
+		color: $htNewGreen2;
+		font-weight: 800;
+
+		@mixin atMedium {
+			text-align: center;
+			line-height: 2;
+			font-size: 1rem;
+			width: 75%;
+			/*padding: 30px;*/
+		}
+
+		@mixin atLarge {
+			font-size: 1.2rem;
+			padding: 60px;
+			width: 100%;
+		}
+	}
+}
+
+.credits::after {
+	display: table;
+	content: "";
+	clear: both;
+}

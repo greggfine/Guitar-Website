@@ -9,13 +9,17 @@
   <link href="assets/images/favicon.ico" rel="icon" type="image/x-icon" />
 
   <title>Gregg Fine | Guitarist</title>
-  <meta name="keywords" content="">
+  <meta name="keywords" content="guitar">
   <meta name="description" content="">
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 
-  <link rel="stylesheet" href="assets/styles/styles-b9753022b1.css"/>
+  <!-- build:css assets/styles/styles.css -->
+  <link rel="stylesheet" href="temp/styles/styles.css">
+  <!-- endbuild -->
+
+  <!-- <script src="mail.php"></script> -->
 
 </head>
 
@@ -24,39 +28,40 @@
 <div class="container-fixed">
 
 	<header class="header ">
-		<nav class="navbar navbar-expand-lg header__nav ">
 
-		  <div class="header__full-title header__spacing">
-		  	<a class="navbar-brand header__title">Gregg Fine</a>
-		  	<span class="navbar-brand header__title-guitar">Guitar</span>
-		  </div>
+		<nav class="navbar navbar-expand-lg  header__nav">
+			<div class="header__full-title header__spacing"> 
+				<a class="navbar-brand header__title">Gregg Fine</a>
+				<span class="navbar-brand header__title-guitar">Guitar</span>
+			</div>
 
-		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-		    <!-- <span class="navbar-toggler-icon"></span> -->
-		    <span class="fa fa-reorder"></span>
-		  </button>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+			 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="fa fa-reorder"></span>
+			</button>
+		
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto header__spacing2">
 
-		  <div class="collapse navbar-collapse " id="navbarSupportedContent">
-		    <ul class="navbar-nav mr-auto header__spacing2">
-		      <li class="nav-item header__menu-item">
-		        <a class="nav-link header__menu-item-anchor" href="#about" id="about-link">About</a>
-		      </li>
-		      <li class="nav-item header__menu-item">
-		        <a class="nav-link header__menu-item-anchor" href="#video" id="video-link">Video</a>
-		      </li>
-		      <li class="nav-item header__menu-item">
-		        <a class="nav-link header__menu-item-anchor" href="#audio" id="audio-link">Audio</a>
-		      </li>
-		      <li class="nav-item header__menu-item">
-		        <a class="nav-link header__menu-item-anchor" href="#tutorials" id="tutorials-link">Tutorials</a>
-		      </li>
-		      <li class="nav-item header__menu-item">
-		        <a class="nav-link header__menu-item-anchor" href="#contact" id="contact-link">Contact</a>
-		      </li>
-		     
-		    </ul>
+				<li class="nav-item header__menu-item">
+					<a class="nav-link header__menu-item-anchor" href="#about" id="about-link">About</a>
+				</li>
+				<li class="nav-item header__menu-item">
+					<a class="nav-link header__menu-item-anchor" href="#video" id="video-link">Video</a>
+				</li>
+				<li class="nav-item header__menu-item">
+					<a class="nav-link header__menu-item-anchor" href="#audio" id="audio-link">Audio</a>
+				</li>
+				<li class="nav-item header__menu-item">
+					<a class="nav-link header__menu-item-anchor" href="#tutorials" id="tutorials-link">Tutorials</a>
+				</li>
+				<li class="nav-item header__menu-item">
+					<a class="nav-link header__menu-item-anchor" href="#contact" id="contact-link">Contact</a>
+				</li>
 
-		  </div>
+				</ul>
+
+			</div>
 		</nav>
 
 	</header>
@@ -240,7 +245,7 @@
 
 	<!-- </section> -->
 	
-	<div class="contact page-section" data-matching-link="#contact-link" id="contact">
+	<!-- <div class="contact page-section" data-matching-link="#contact-link" id="contact">
 	<h1 class="section-title section-title--contact">CONTACT</h1>
 	<form action="send" method="POST" class="contact__form">
 		<input type="text" placeholder="name" name="name">
@@ -249,7 +254,50 @@
 		<textarea name="" id="" cols="30" rows="10" placeholder="your message" name="message"></textarea>
 		<input type="submit" class="btn-submit">
 	</form>
+	</div> -->
+
+	<?php
+	if (isset($_POST['name']) && isset($_POST['email'])) {
+	$name = $_POST['name'];
+	$email = $_POST['email'];
+	$to = 'bbeez8500@gmail.com';
+	$subject = 'New Sub';
+	$body = '<html>
+	            <body>
+	                <h2>Feedback</h2>
+					<hr>
+				</body>
+	        </html>';
+	
+	$headers = "From: ".$name." <".$email.">\r\n";
+	$headers = "Reply-To: ".$email."\r\n";
+	$headers = "MIME-Version: "1.0\r\n";
+	$headers = "Content-Type: text/html; charset-utf-8";
+	
+	$send = mail($to, $subject, $body, $headers);
+	if ($send) {
+	    echo '<br>';
+	    echo 'Thanks'
+	} else {
+	    echo 'error';
+	}
+	}?>
+
+	<div class="contact page-section" data-matching-link="#contact-link" id="contact">
+		<h1 class="section-title section-title--contact">CONTACT</h1>
+		<form action="" method="post" class="contact__form">
+			<input type="text" placeholder="name" name="name">
+			<input type="text" placeholder="email" name="email">
+			<!-- <input type="email" placeholder="email" name="email"> -->
+			<!-- <input type="telephone" placeholder="phone" name="phone">
+			<textarea name="" id="" cols="30" rows="10" placeholder="your message" name="message"></textarea> -->
+			<input type="submit" class="btn-submit">
+		</form>
 	</div>
+
+
+
+
 
 	<!-- END CONTACT US -->
 	
@@ -280,7 +328,9 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 	
-	<script src="assets/scripts/App-444bc7e6f3.js"></script>
+	<!-- build:js assets/scripts/App.js -->
+	<script src="/temp/scripts/App.js"></script>
+	<!-- endbuild -->
 
 
 	<script>

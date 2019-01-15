@@ -1,0 +1,32 @@
+.container {
+
+	width: 700px;
+	margin: auto;
+
+	@mixin atSmall {
+		width: 1200px;
+		margin: auto;
+	}
+
+	&--large {
+		margin: auto;
+
+		@mixin atMedium-Small {
+			max-width: 500px;
+		}
+
+		@mixin atMedium {
+			max-width: 1200px;
+		}
+
+		@mixin atLarge {
+			max-width: 1500px;
+		}
+
+		@mixin atExtra-Large {
+			max-width: 1700px;
+		}
+	}
+
+
+}

@@ -1,0 +1,290 @@
+.header  {	
+	color: $htLightGreen;
+	width: 100%;
+	letter-spacing: 0.2125rem;
+	z-index: 2;
+	box-shadow: 0px 3px 30px 0px #5a5656;
+
+	@mixin atMedium {
+		position: fixed;
+	}
+
+	&__spacing {
+		/*border: 5px solid red;*/
+	}
+
+	&__spacing2 {
+		display: flex;
+		justify-content: flex-end;
+		width: 100%;
+		/*padding-right: 40px;*/
+
+		@mixin atSmall {
+			padding-right: 0px;
+		}
+
+		@mixin atMedium {
+			padding-right: 70px;
+		}
+
+		@mixin atMedium-Small {
+			padding-right: 50px;
+		}
+
+		/*border: 5px solid red;*/
+	}
+
+	&--is-expanded {
+		/*color: red;*/
+	}
+
+	&__menu {
+		display: none;
+
+		@mixin atMedium-Small {
+			display: block;
+		}
+
+
+
+		&--is-visible {
+			display: block;
+		}
+	}
+
+	&__nav {
+		background-color: $htBlackOpacity;
+		display: flex;
+		justify-content: center;
+		
+	
+		@mixin atSmall {
+			justify-content: space-between;
+			height: 120px;
+		}
+
+		@mixin atMedium-Small {
+			justify-content: space-around;
+		}
+
+		@mixin atLarge {
+			justify-content: space-around;
+		}
+	}
+
+	&__full-title {
+		animation: fadeIn 1.5s;
+		margin-left: -40px;
+
+		@mixin atSmall {
+			padding-left: 0px;
+		}
+
+		@mixin atMedium {
+			padding-left: 60px;
+		}
+		@mixin atMedium-Small {
+			padding-left: 100px;
+		}
+	}
+
+
+
+
+
+	&__title {
+		/*flex: 0 0 100px;*/
+		font-size: 1.47rem;
+		letter-spacing: 2px;
+		font-weight: 400;
+		padding-left: 0px;
+
+		@mixin atSmall {
+			flex: 0 0 400px;
+			font-size: 1.8rem;
+			padding-left: 60px;
+			letter-spacing: 4.5px;
+			margin-left: -20px;
+		}
+		
+		@mixin atMedium-Small {
+			padding-left: 0px;
+			letter-spacing: 6px;
+		}
+
+		@mixin atMedium-Large {
+			font-size: 2.0rem;
+		}
+
+		@mixin atLarge{
+			font-size: 2.5rem;
+		}
+	}
+
+	&__title-guitar {
+		font-weight: 200;
+		color: #c0bdbd;
+		font-size: 1.5rem;
+		letter-spacing: 2px;	
+
+		@mixin atSmall{
+			font-size: 1.7rem;
+			letter-spacing: 4.5px;
+		}
+
+		@mixin atMedium-Small {
+			letter-spacing: 6px;
+			margin-left: -15px;
+		}
+
+		@mixin atMedium-Large {
+			font-size: 1.9rem;
+			margin-left: -10px;
+		}
+
+		@mixin atLarge{
+			font-size: 2.2rem;
+			margin-left: -5px;
+		}
+	}
+
+	&__menu-item {
+		/*display: inline;*/
+		font-weight: 200;
+
+		@mixin atMedium {
+			font-size: 1rem;
+			padding: .2rem;
+		}
+
+		@mixin atMedium-Large {
+			font-size: 1.1rem;
+			padding: .5rem;
+		}
+
+		@mixin atLarge{
+			font-size: 1.2rem;
+			padding: 1rem;
+		}
+	}
+
+	&__menu-item-dot {
+	    height: 6px;
+	    width: 6px;
+	    background-color: #bbb;
+	    border-radius: 50%;
+	    display: inline-block;
+	}
+
+	&__menu-item-anchor {
+		text-decoration: none !important;
+		color: $htWhite;
+		transition: color 100ms;
+
+		@mixin atMedium {
+			&.is-current-link {
+				color: $htLightGreen;
+			}
+		}
+	}
+
+	&__menu-item-anchor:hover {
+		color: $htLightGreen;
+	}
+
+	&__menu-icon {	
+		width: 80px;
+		height: 19px;
+		position: absolute;
+		top: 35px;
+		right: -30px;
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0px;
+			left: 0;
+			width: 20px;
+			height: 3px;
+			background-color: #fff;
+			transform-origin: 0 0;
+			transition: transform 300ms ease-out;
+		}
+
+		&__middle {
+			position: absolute;
+			top: 8px;
+			left: 0;
+			width: 20px;
+			height: 3px;
+			background-color: #fff;
+			transition: all 300ms ease-out;
+			transform-origin: 0 50%;
+		}
+
+		&::after {
+			content: "";
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 20px;
+			height: 3px;
+			background-color: #fff;
+			transform-origin: 0 100%;
+			transition: transform 300ms ease-out;
+		}
+
+		&--close-x {
+			&::before {
+				transform: rotate(45deg) scaleX(1.25);
+
+			}
+
+			.header__menu-icon__middle {
+				opacity: 0;
+				transform: scaleX(0);
+			}
+
+			&::after {
+				transform: rotate(-45deg) scaleX(1.25) translateY(1px);
+			}
+		}
+
+		@mixin atSmall {
+			right: 0px;
+			top: 45px;
+		}
+
+		@mixin atMedium {
+			right: 20px;
+		}
+
+		@mixin atMedium-Small {
+			display: none;
+		}
+		
+
+	}
+}
+
+
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+
+.fa-reorder {
+	color: #fff;
+}
+
+button.navbar-toggler {
+	outline: none;
+}
+
+
