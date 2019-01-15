@@ -1,0 +1,115 @@
+.section-title {
+	color: $htMediumGreen;
+	font-size: 1.6rem;
+	border-bottom: 2px solid $htNewGreen2;
+	border-top: 2px solid $htNewGreen2;
+	width: 130px;
+	margin: 0 auto 60px;
+	text-align: center;
+
+	@mixin atSmall {
+		margin: 0 auto 80px;
+		font-size: 1.85rem;
+		width: 165px;
+	}
+
+	@mixin atMedium {
+		font-size: 2.1rem;
+		width: 200px;
+	}
+
+	@mixin atLarge {
+		font-size: 2.5rem;
+		width: 300px;
+	}
+
+	&--instruments {
+		color: $htMediumGrey;
+		border-bottom: 2px solid $htWhite;
+		border-top: 2px solid $htWhite;
+	}
+
+	&--contact {
+
+		background-color: rgba(255, 255, 255, .85);
+		width: 150px;
+
+		@mixin atSmall {
+			width: 200px;
+			margin-top: 100px;
+		}
+
+		@mixin atMedium {
+			width: 250px;
+			margin-top: -10px;
+		}
+
+		@mixin atMedium-Small {
+			margin-top: -100px;
+		}
+
+		@mixin atLarge {
+			width: 300px;
+		}
+	}
+
+	&--about {
+		margin-top: 90px;
+		color: $htMediumGreen;
+
+		@mixin atSmall {
+			margin-top: 100px;
+		}
+
+		@mixin atMedium {
+			margin-top: 130px;
+		}
+	}
+
+	&__video, &__audio {
+		margin-top: 60px;
+		margin-bottom: 20px;
+
+		@mixin atSmall{
+			margin-top: 20px;
+		}
+
+		@mixin atMedium {
+			margin-top: -30px;
+		}
+
+		@mixin atMedium-Large {
+			margin-top: -50px;
+		}
+	}
+
+	&__audio {
+		margin-bottom: 70px;
+	}
+
+	&__tutorials {
+		width: 160px;
+		margin-bottom: 60px;
+
+		@mixin atSmall {
+			width: 200px;
+			margin-top: -190px;
+			margin-bottom: 40px;
+		}
+
+		@mixin atMedium {
+			width: 250px;
+			margin-bottom: 30px;
+		}
+
+		@mixin atMedium-Small {
+			margin-bottom: 40px;
+		}
+
+		@mixin atLarge {
+			width: 300px;
+			margin-top: 0px;
+			margin-bottom: 140px;
+		}
+	}
+}
